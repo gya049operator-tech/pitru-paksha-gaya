@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bodh Gaya Pitru Paksha Seva — Stay, Priest &amp; Travel Arrangements</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#6B1E23;
+    --maroon-deep:#4A1417;
+    --gold:#C9922E;
+    --gold-light:#E4B563;
+    --parchment:#F3E8D2;
+    --parchment-light:#FAF4E6;
+    --ink:#2B2320;
+    --sage:#5C7350;
+    --white:#FFFDF8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Karla',sans-serif;
+    background:var(--parchment-light);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  h1,h2,h3,.brand{
+    font-family:'Yatra One',cursive;
+    font-weight:400;
+    line-height:1.2;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* ---- Nav ---- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--parchment-light);
+    border-bottom:1px solid rgba(107,30,35,0.15);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{font-size:1.35rem;color:var(--maroon-deep);}
+  .brand span{color:var(--gold);}
+  .nav-links{display:flex;gap:28px;font-size:0.95rem;}
+  .nav-links a{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;}
+  .nav-links a:hover{border-color:var(--gold);}
+  .nav-cta{
+    background:var(--maroon);color:var(--white);
+    padding:9px 18px;border-radius:2px;font-size:0.9rem;
+    letter-spacing:.02em;
+  }
+  .nav-cta:hover{background:var(--maroon-deep);}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--maroon-deep);cursor:pointer;}
+
+  /* ---- Hero ---- */
+  .hero{
+    position:relative;
+    padding:72px 0 96px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 80% -10%, rgba(201,146,46,0.16), transparent 55%),
+      var(--parchment-light);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    color:var(--maroon);
+    font-size:0.98rem;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:2.9rem;
+    color:var(--maroon-deep);
+    max-width:11ch;
+  }
+  .hero p.lead{
+    margin-top:20px;
+    font-size:1.12rem;
+    max-width:44ch;
+    color:#463A34;
+  }
+  .hero-ctas{margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;
+    font-size:0.98rem;
+    border-radius:2px;
+    transition:transform .15s, box-shadow .15s;
+  }
+  .btn-primary{background:var(--maroon);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(107,30,35,.25);}
+  .btn-outline{border:1.5px solid var(--maroon);color:var(--maroon-deep);}
+  .btn-outline:hover{background:rgba(107,30,35,.06);}
+
+  .hero-art{
+    position:relative;
+    display:flex;justify-content:center;
+  }
+  .arch{
+    width:100%;
+    max-width:340px;
+    aspect-ratio:3/4;
+    background:linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+    border-radius:170px 170px 8px 8px;
+    position:relative;
+    box-shadow:0 24px 50px -18px rgba(74,20,23,.5);
+    display:flex;align-items:flex-end;justify-content:center;
+    padding-bottom:28px;
+  }
+  .arch::before{
+    content:"";
+    position:absolute;
+    inset:14px;
+    border:1.5px solid rgba(228,181,99,.55);
+    border-radius:160px 160px 4px 4px;
+  }
+  .arch-spire{
+    width:5px;height:60px;
+    background:var(--gold-light);
+    position:absolute;top:-56px;left:50%;transform:translateX(-50%);
+    border-radius:3px 3px 0 0;
+  }
+  .arch-spire::before{
+    content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+    width:14px;height:14px;background:var(--gold-light);border-radius:50%;
+  }
+  .arch-caption{
+    color:var(--parchment);
+    font-family:'Yatra One',cursive;
+    font-size:1.05rem;
+    text-align:center;
+    padding:0 20px;
+  }
+
+  /* ---- Section shared ---- */
+  section{padding:76px 0;}
+  .section-head{max-width:52ch;margin-bottom:44px;}
+  .section-head h2{font-size:2rem;color:var(--maroon-deep);}
+  .section-head p{margin-top:12px;color:#5A4C42;font-size:1.02rem;}
+
+  /* ---- Services ---- */
+  .services{background:var(--parchment);}
+  .service-list{display:flex;flex-direction:column;border-top:1px solid rgba(107,30,35,.18);}
+  .service-row{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:22px;
+    padding:26px 0;
+    border-bottom:1px solid rgba(107,30,35,.18);
+    align-items:start;
+  }
+  .service-icon{
+    width:48px;height:48px;
+    border-radius:50%;
+    background:var(--white);
+    border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.3rem;
+  }
+  .service-row h3{font-family:'Karla',sans-serif;font-weight:700;font-size:1.12rem;color:var(--maroon-deep);}
+  .service-row p{margin-top:6px;color:#5A4C42;max-width:56ch;}
+
+  /* ---- How it works ---- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    counter-reset:step;
+    border:1px solid rgba(107,30,35,.18);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .step{
+    padding:30px 24px;
+    border-right:1px solid rgba(107,30,35,.18);
+    background:var(--white);
+  }
+  .step:last-child{border-right:none;}
+  .step-num{
+    font-family:'Yatra One',cursive;
+    font-size:1.6rem;
+    color:var(--gold);
+    display:block;
+    margin-bottom:10px;
+  }
+  .step h3{font-family:'Karla',sans-serif;font-weight:700;font-size:1.02rem;color:var(--maroon-deep);}
+  .step p{margin-top:8px;font-size:0.94rem;color:#5A4C42;}
+
+  /* ---- Trust ---- */
+  .trust{background:var(--maroon-deep);color:var(--parchment-light);}
+  .trust .section-head h2{color:var(--white);}
+  .trust .section-head p{color:rgba(250,244,230,.8);}
+  .trust-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  }
+  .trust-item{border-left:2px solid var(--gold);padding-left:18px;}
+  .trust-item h3{font-family:'Karla',sans-serif;font-weight:700;font-size:1.5rem;color:var(--gold-light);}
+  .trust-item p{margin-top:6px;font-size:0.94rem;color:rgba(250,244,230,.82);}
+
+  /* ---- Contact ---- */
+  .contact{background:var(--parchment);}
+  .contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;
+  }
+  .contact-info h2{font-size:2rem;color:var(--maroon-deep);}
+  .contact-info p{margin-top:14px;color:#5A4C42;max-width:42ch;}
+  .contact-detail{margin-top:24px;}
+  .contact-detail div{margin-bottom:14px;font-size:0.98rem;}
+  .contact-detail b{display:block;color:var(--maroon-deep);font-size:0.85rem;letter-spacing:.02em;margin-bottom:2px;}
+
+  form{
+    background:var(--white);
+    border:1px solid rgba(107,30,35,.18);
+    border-radius:4px;
+    padding:32px;
+  }
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:0.86rem;color:var(--maroon-deep);margin-bottom:6px;}
+  .field input, .field select, .field textarea{
+    width:100%;
+    padding:11px 13px;
+    border:1px solid rgba(107,30,35,.28);
+    border-radius:3px;
+    font-family:'Karla',sans-serif;
+    font-size:0.96rem;
+    background:var(--parchment-light);
+    color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:2px solid var(--gold);
+    outline-offset:1px;
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  textarea{resize:vertical;min-height:90px;}
+  .submit-btn{
+    width:100%;
+    background:var(--maroon);
+    color:var(--white);
+    border:none;
+    padding:14px;
+    font-size:1rem;
+    font-family:'Karla',sans-serif;
+    font-weight:600;
+    border-radius:3px;
+    cursor:pointer;
+    transition:background .2s;
+  }
+  .submit-btn:hover{background:var(--maroon-deep);}
+  .form-note{font-size:0.82rem;color:#7A6C60;margin-top:10px;text-align:center;}
+
+  /* ---- Footer ---- */
+  footer{
+    background:var(--maroon-deep);
+    color:rgba(250,244,230,.75);
+    padding:40px 0;
+    font-size:0.9rem;
+  }
+  .footer-wrap{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+  }
+  .footer-wrap .brand{color:var(--white);font-size:1.1rem;}
+  .footer-wrap .brand span{color:var(--gold-light);}
+
+  @media (max-width: 860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{order:-1;}
+    .hero h1{font-size:2.3rem;max-width:none;}
+    .nav-links{display:none;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .step{border-bottom:1px solid rgba(107,30,35,.18);}
+    .trust-grid{grid-template-columns:1fr;gap:24px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .field-row{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .btn:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">Bodh Gaya <span>Pitru Seva</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Send enquiry</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Pitru Paksha, Bodh Gaya — for pilgrims arriving for Pind Daan &amp; Shraddh</div>
+      <h1>We take care of the journey, so you can focus on the rites</h1>
+      <p class="lead">Stay, priest, cab and sightseeing — arranged locally, matched to your budget, and confirmed before you travel. One conversation with us is all it takes.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Send your requirement</a>
+        <a href="https://wa.me/919123166705" class="btn btn-outline">Message on WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="arch">
+        <div class="arch-spire"></div>
+        <p class="arch-caption">Near Vishnupad Temple &amp; the Falgu river</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Everything arranged, one contact</h2>
+      <p>Every family's Pitru Paksha visit needs a handful of things sorted before they even reach Bodh Gaya. We handle each one directly with vetted, local people.</p>
+    </div>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="service-icon">🛏</div>
+        <div>
+          <h3>Stay, at your budget</h3>
+          <p>Dharamshala-style rooms, mid-range hotels, or premium stays — all within walking distance of the ghats and temple, chosen to match what you want to spend.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">🪔</div>
+        <div>
+          <h3>Priest &amp; puja arrangements</h3>
+          <p>An experienced purohit for your Pind Daan and Shraddh rituals, with the samagri arranged in advance and the timing planned around your family's schedule.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">🚖</div>
+        <div>
+          <h3>Cab, pickup &amp; drop</h3>
+          <p>From the station or airport to your stay, and back again — plus local travel for every ritual site during your visit, arranged with a single driver where possible.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon">🕉</div>
+        <div>
+          <h3>Local sightseeing</h3>
+          <p>Time permitting, we'll take you to the Mahabodhi Temple, the Bodhi Tree, Sujata Stupa and Barabar Caves — at a pace that fits around your ritual days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How a booking works</h2>
+      <p>Four steps, mostly over a phone call or WhatsApp — you don't need to visit in person to confirm anything.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h3>Share your dates &amp; needs</h3>
+        <p>Tell us your travel dates, number of people, and budget — through the form below or on WhatsApp.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h3>We suggest options</h3>
+        <p>We come back with room and priest options that fit your budget, usually within a few hours.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h3>Confirm &amp; travel</h3>
+        <p>Once you confirm, we lock in your room, priest and pickup — you travel knowing it's arranged.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <h3>We're with you on the ground</h3>
+        <p>From pickup at the station to the last ritual, we stay reachable throughout your stay in Bodh Gaya.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Why families trust us with this</h2>
+      <p>Pitru Paksha is not an ordinary trip — the arrangements need to be handled with the same care as the rituals themselves.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <h3>Local, not an app</h3>
+        <p>We're based in Bodh Gaya year-round — every vendor is someone we know personally, not a listing.</p>
+      </div>
+      <div class="trust-item">
+        <h3>Priced upfront</h3>
+        <p>You'll know the full cost of stay, priest and cab before you confirm — no surprises on arrival.</p>
+      </div>
+      <div class="trust-item">
+        <h3>One point of contact</h3>
+        <p>You deal with one person throughout — from your first message to the day you leave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h2>Tell us about your visit</h2>
+      <p>Fill in your details and we'll get back with room and priest options within a few hours. For a faster response, message us directly on WhatsApp.</p>
+      <div class="contact-detail">
+        <div>
+          <b>WhatsApp / Phone</b>
+          +91 91231 66705
+        </div>
+        <div>
+          <b>Email</b>
+          yadusan9123@gmail.com
+        </div>
+        <div>
+          <b>Based in</b>
+          Bodh Gaya, Gaya district, Bihar
+        </div>
+      </div>
+    </div>
+
+    <form id="enquiry-form">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Phone / WhatsApp number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="field">
+          <label for="people">Number of pilgrims</label>
+          <input type="number" id="people" name="people" min="1" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="dates">Travel dates</label>
+          <input type="text" id="dates" name="dates" placeholder="e.g. 18–22 Sept">
+        </div>
+        <div class="field">
+          <label for="budget">Budget for stay</label>
+          <select id="budget" name="budget">
+            <option>Economy (dharamshala)</option>
+            <option>Mid-range hotel</option>
+            <option>Premium</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="services">Services needed</label>
+        <input type="text" id="services" name="services" placeholder="Stay, priest, cab, sightseeing...">
+      </div>
+      <div class="field">
+        <label for="message">Anything else we should know</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send enquiry on WhatsApp</button>
+      <p class="form-note">This opens WhatsApp with your details filled in — nothing is sent until you press send there.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <div class="brand">Bodh Gaya <span>Pitru Seva</span></div>
+    <div>Bodh Gaya, Bihar &nbsp;·&nbsp; +91 91231 66705</div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('enquiry-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const people = document.getElementById('people').value.trim();
+    const dates = document.getElementById('dates').value.trim();
+    const budget = document.getElementById('budget').value.trim();
+    const services = document.getElementById('services').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    let text = `Namaste, I would like to enquire about Pitru Paksha arrangements.%0A`;
+    text += `Name: ${name}%0A`;
+    text += `Phone: ${phone}%0A`;
+    text += `Number of pilgrims: ${people}%0A`;
+    if(dates) text += `Travel dates: ${dates}%0A`;
+    if(budget) text += `Budget: ${budget}%0A`;
+    if(services) text += `Services needed: ${services}%0A`;
+    if(message) text += `Message: ${message}%0A`;
+
+    // Replace 919123166705 with your actual WhatsApp number (country code + number, no + or spaces)
+    const whatsappNumber = "919123166705";
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
