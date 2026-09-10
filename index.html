@@ -3,7 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bodh Gaya Pitru Paksha Seva — Stay, Priest &amp; Travel Arrangements</title>
+<title>Pitru Paksha Bodh Gaya Stay &amp; Pind Daan Arrangements | Room, Priest, Cab Booking</title>
+<meta name="description" content="Planning Pitru Paksha at Bodh Gaya? We arrange budget-to-premium stay, an experienced priest for Pind Daan &amp; Shraddh, pickup/drop cabs, and local sightseeing — all from one local contact. Message us on WhatsApp to book.">
+<meta name="keywords" content="pitru paksha bodh gaya, pind daan bodh gaya, gaya shraddh, pitru paksha stay, pitru paksha hotel booking, priest for pind daan gaya, vishnupad temple priest, pitru paksha package bodh gaya">
+<link rel="canonical" href="https://gya049operator-tech.github.io/pitru-paksha-gaya/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pitru Paksha Bodh Gaya — Stay, Priest &amp; Travel Arrangements">
+<meta property="og:description" content="Budget-to-premium stay, priest for Pind Daan, cab pickup/drop and local sightseeing in Bodh Gaya — arranged by one local contact.">
+<meta property="og:url" content="https://gya049operator-tech.github.io/pitru-paksha-gaya/">
+<meta property="og:locale" content="en_IN">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Bodh Gaya Pitru Seva",
+  "description": "Stay, priest, cab and sightseeing arrangements for pilgrims visiting Bodh Gaya for Pitru Paksha Pind Daan and Shraddh rituals.",
+  "url": "https://gya049operator-tech.github.io/pitru-paksha-gaya/",
+  "telephone": "+91-91231-66705",
+  "email": "yadusan9123@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bodh Gaya",
+    "addressRegion": "Bihar",
+    "addressCountry": "IN"
+  },
+  "areaServed": "Bodh Gaya, Gaya"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -500,18 +529,19 @@
     const services = document.getElementById('services').value.trim();
     const message = document.getElementById('message').value.trim();
 
-    let text = `Namaste, I would like to enquire about Pitru Paksha arrangements.%0A`;
-    text += `Name: ${name}%0A`;
-    text += `Phone: ${phone}%0A`;
-    text += `Number of pilgrims: ${people}%0A`;
-    if(dates) text += `Travel dates: ${dates}%0A`;
-    if(budget) text += `Budget: ${budget}%0A`;
-    if(services) text += `Services needed: ${services}%0A`;
-    if(message) text += `Message: ${message}%0A`;
+    let text = `Namaste, I would like to enquire about Pitru Paksha arrangements.\n`;
+    text += `Name: ${name}\n`;
+    text += `Phone: ${phone}\n`;
+    text += `Number of pilgrims: ${people}\n`;
+    if(dates) text += `Travel dates: ${dates}\n`;
+    if(budget) text += `Budget: ${budget}\n`;
+    if(services) text += `Services needed: ${services}\n`;
+    if(message) text += `Message: ${message}\n`;
 
     // Replace 919123166705 with your actual WhatsApp number (country code + number, no + or spaces)
     const whatsappNumber = "919123166705";
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    window.location.href = url;
   });
 </script>
 
